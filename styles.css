@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 200vh;
+    display: flex;
+    flex-direction: column;
+}
+::-webkit-scrollbar{
+    width: 15px;
+}
+::-webkit-scrollbar-button{
+    background:black ;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(aqua,rgb(0, 0, 0) );
+    border-radius: 10px;
+}
+
+h1 {
+    margin-left: 60px;
+    text-align: center;
+    color: aqua;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+h2 {
+    text-align: center;
+    margin-left: 4px;
+}
+
+.navbar {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.navbar-logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li {
+    margin-left: 20px;
+}
+
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 20px;
+    transition: background-color 0.3s, border-radius 0.3s;
+}
+
+.navbar-menu a:hover {
+    background-color: rgba(0, 255, 255, 0.27);
+    border-radius: 20px;
+}
+
+.navbar-menu i {
+    font-size: 22px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.frame1, .frame2, .frame3, .frame4 {
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.frame1 {
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.frame2 {
+    background-color: black;
+    text-align: center;
+    padding: 20px;
+    margin: 60px 0;
+    width: 100%;
+    max-width: 1500px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    max-height: 80vh;
+}
+
+.frame3 {
+    background-color: black;
+    text-align: center;
+}
+
+.member-box {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    border: 4px solid transparent;
+    animation: borderAnimation 3s infinite;
+}
+
+@keyframes borderAnimation {
+    0% {
+        border-color: transparent;
+        box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.7);
+    }
+    50% {
+        border-color: rgba(0, 255, 255, 0.7);
+        box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.7);
+    }
+    100% {
+        border-color: transparent;
+        box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.7);
+    }
+}
+
+.member-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.member-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.member-info {
+    color: white;
+}
+
+.member-info h3 {
+    margin: 0;
+}
+
+.member-info p {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Jarak antara ikon dan teks */
+}
+
+.member-info a {
+    color: white; /* Warna ikon */
+    font-size: 20px; /* Ukuran ikon */
+    text-decoration: none; /* Hapus garis bawah */
+}
+
+.member-info a:hover {
+    color: aqua; /* Warna ikon saat hover */
+}
+
+
+.frame4 {
+    background-color: black;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    background-color: #222;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background-color: #333;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.social-link:hover {
+    background-color: #555;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+.photo-gallery a {
+    display: block;
+    position: relative;
+}
+
+.photo-gallery img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: border 0.3s ease-in-out;
+    border: 2px solid transparent;
+}
+
+.photo-gallery img:hover {
+    border: 2px solid rgba(0, 255, 255, 0.535);
+    cursor: pointer;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .navbar-menu li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}
+
+.text-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.text-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
