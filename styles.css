@@ -37,28 +37,34 @@ h2 {
 
 .navbar {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Warna latar belakang yang lebih gelap */
+    background-color: rgba(0, 0, 0, 0);
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    position: sticky; /* Navbar tetap di atas saat scroll */
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
     display: flex;
-    justify-content: space-between; /* Supaya logo dan menu ada di dua sisi */
-    align-items: center; /* Agar elemen di tengah secara vertikal */
+    justify-content: center;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 10px;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    max-width: 1200px;
+    width: 100%;
 }
 
 .navbar-logo {
     color: white;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: bold;
     text-decoration: none;
-    margin-left: 15px; /* Jarak dari kiri */
 }
 
 .navbar-menu {
@@ -66,15 +72,17 @@ h2 {
     display: flex;
     margin: 0;
     padding: 0;
-    gap: 10px; /* Jarak antar item menu */
-    margin-right: 15px; /* Jarak dari kanan */
+}
+
+.navbar-menu li {
+    margin-left: 20px;
 }
 
 .navbar-menu a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
-    padding: 8px 10px;
+    font-size: 22px;
+    padding: 10px 15px;
     display: block;
     border-radius: 20px;
     transition: background-color 0.3s, border-radius 0.3s;
@@ -83,6 +91,10 @@ h2 {
 .navbar-menu a:hover {
     background-color: rgba(0, 255, 255, 0.27);
     border-radius: 20px;
+}
+
+.navbar-menu i {
+    font-size: 22px;
 }
 
 .container {
@@ -195,6 +207,7 @@ h2 {
     color: aqua; /* Warna ikon saat hover */
 }
 
+
 .frame4 {
     background-color: black;
     text-align: center;
@@ -274,18 +287,22 @@ h2 {
     }
 }
 
-/* Media Query untuk iPhone XR */
 @media (max-width: 768px) {
-    .navbar {
-        justify-content: flex-end; /* Supaya semua konten ke kanan */
-    }
-
-    .navbar-logo {
-        margin-right: auto; /* Posisikan logo di kiri, menu di kanan */
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .navbar-menu {
-        gap: 5px; /* Kurangi jarak antar item untuk layar kecil */
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .navbar-menu li {
+        margin-left: 0;
+        margin-bottom: 10px;
     }
 }
 
