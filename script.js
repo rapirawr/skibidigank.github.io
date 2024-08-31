@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Array of image filenames (500 images)
     const images = [];
-    for (let i = 1; i <= 500; i++) {
+    for (let i = 1; i <= 100; i++) {
         images.push(`Image${i}.jpg`);
     }
 
