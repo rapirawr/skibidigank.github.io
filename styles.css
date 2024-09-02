@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     height: 200vh;
@@ -104,6 +104,7 @@ h2 {
     align-items: center;
     flex-direction: column;
 }
+
 
 .frame1, .frame2, .frame3, .frame4 {
     height: auto;
