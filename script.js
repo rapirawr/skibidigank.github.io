@@ -1,7 +1,7 @@
 const photoGallery = document.getElementById('photo-gallery');
 
 const images = [];
-for (let i = 1; i <= 100; i++) {
+for (let i = 1; i <= 250; i++) {
     images.push(`Foto/Image${i}.jpg`);
 }
 
