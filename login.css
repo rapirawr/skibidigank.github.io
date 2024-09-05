@@ -1,0 +1,91 @@
+/* login.css */
+body.login-body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    position: relative;
+    color: white;
+}
+
+.login-card {
+    width: 300px;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.login-card:hover {
+    box-shadow: 0 4px 30px aqua;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 93%;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    outline: none;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    margin: 1rem auto 0 auto;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px aqua;
+}
+
+/* Warna teks untuk h2.title */
+h2.title {
+    color: white; /* Warna teks default */
+}
+
+h2.title .log {
+    color: rgb(255, 255, 255); /* Warna untuk 'Log' */
+}
+
+h2.title .in {
+    color: aqua; /* Warna untuk 'in' */
+}

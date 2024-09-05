@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SKIBIDI GANK</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body class="login-body">
+    <div class="container">
+        <div class="login-card box">
+            <h2 class="title">
+                <span class="log">Log</span><span class="in">in</span>
+            </h2>
+            <form id="login-form" onsubmit="login(event)">
+                <div class="input-group">
+                    <label for="username"><strong>Username</strong></label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password"><strong>Password</strong></label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function login(event) {
+            event.preventDefault(); // Mencegah form submit secara default
+            const username = document.getElementById('username').value;
+            localStorage.setItem('username', username);
+            window.location.href = 'ror.html'; // Arahkan ke halaman utama
+        }
+    </script>
+</body>
+</html>
