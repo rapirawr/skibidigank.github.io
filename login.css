@@ -22,13 +22,9 @@ body.login-body {
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 15px;
     backdrop-filter: blur(15px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px aqua;
     transition: box-shadow 0.3s ease;
     text-align: center;
-}
-
-.login-card:hover {
-    box-shadow: 0 4px 30px aqua;
 }
 
 .input-group {
