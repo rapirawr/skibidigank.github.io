@@ -11,6 +11,22 @@
 </head>
 <body onload="displayUsername()">
 
+<!-- Loading Screen -->
+<div id="loading-screen" class="loading-overlay">
+    <div class="card">
+        <div class="loader">
+            <p>loading</p>
+            <div class="words">
+                <span class="word">Image</span>
+                <span class="word">Navbar</span>
+                <span class="word">Style</span>
+                <span class="word">Member</span>
+                <span class="word">Social Media</span>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Navbar -->
 <nav class="navbar">
     <div class="navbar-container">
@@ -29,23 +45,23 @@
     </div>
 </nav>
 
-    <!-- Frame 1 -->
-    <div class="container frame1" id="frame1">
-        <h2 class="text-animate">Hi <span id="display-username">Guest</span></h2>
-        <h2 class="text-animate">Welcome To...</h2>
-        <h1 class="text-animate">SKIBIDI GANK</h1>
-    </div>
+<!-- Frame 1 -->
+<div class="container frame1" id="frame1">
+    <h2 class="text-animate">Hi <span id="display-username">Guest</span></h2>
+    <h2 class="text-animate">Welcome To...</h2>
+    <h1 class="text-animate">SKIBIDI GANK</h1>
+</div>
 
-    <!-- Frame 2 -->
-    <div class="container frame2" id="frame2">
-        <h2 class="text-animate">Galeri</h2>
-        <div class="photo-gallery" id="photo-gallery">
-            <!-- Foto dari JavaScript 😋 -->
-        </div>
+<!-- Frame 2 -->
+<div class="container frame2" id="frame2">
+    <h2 class="text-animate">Galeri</h2>
+    <div class="photo-gallery" id="photo-gallery">
+        <!-- Foto dari JavaScript 😋 -->
     </div>
+</div>
 
- <!-- Frame 3 -->
- <div class="container frame3" id="frame3">
+<!-- Frame 3 -->
+<div class="container frame3" id="frame3">
     <h2 class="text-animate">Member Skibidi Gank</h2>
     <div class="member-box">
         <div class="member-item text-animate">
@@ -75,22 +91,29 @@
         <div class="member-item text-animate">
             <div class="member-icon"><i class="fas fa-dove"></i></div>
             <div class="member-info">
-                <h3><a href="DikaBasuri.html">Dika Basuri</a> <i class="fa fa-user-tie"></i></h3>
+                <h3><a href="DikaBasuri.html">Dika Bajingan</a> <i class="fa fa-user-tie"></i></h3>
             </div>
         </div>
     </div>
 </div>
 
-    <!-- Frame 4 -->
-    <div class="container frame4" id="frame4">
-        <h2 class="text-animate">Social Media</h2>
-        <div class="social-media">
-            <a href="https://www.tiktok.com/@fiveskibidigank" class="social-link text-animate" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.instagram.com/fiveskibidigank_" class="social-link text-animate" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com" class="social-link text-animate" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        </div>
+<!-- Frame 4 -->
+<div class="container frame4" id="frame4">
+    <h2 class="text-animate">Social Media</h2>
+    <div class="social-media">
+        <a href="https://www.tiktok.com/@fiveskibidigank" class="social-link text-animate" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/fiveskibidigank_" class="social-link text-animate" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com" class="social-link text-animate" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
     </div>
+</div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
+<script>
+    window.addEventListener('load', function() {
+        // Hide the loading screen once the page is fully loaded
+        const loadingScreen = document.getElementById('loading-screen');
+        loadingScreen.style.display = 'none';
+    });
+</script>
 </body>
 </html>

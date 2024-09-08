@@ -29,6 +29,27 @@ if (isLoggedIn()) {
         a.appendChild(img);
         photoGallery.appendChild(a);
     });
+    window.addEventListener('load', function() {
+        const loadingScreen = document.getElementById('loading-screen');
+        const allContent = document.querySelectorAll('body > *:not(#loading-screen)');
+
+        // Menyembunyikan semua konten
+        allContent.forEach(element => {
+            element.classList.add('hidden');
+        });
+
+        // Menghilangkan loading screen setelah semua elemen dimuat
+        setTimeout(() => {
+            loadingScreen.style.opacity = '0';
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+                allContent.forEach(element => {
+                    element.classList.remove('hidden');
+                });
+            }, 1000); // Waktu untuk memastikan transisi sebelum menghilangkan loading screen
+        }, 0);
+    });
+
 } else {
     // Jika belum login, tampilkan pesan dengan ikon login
     const messageDiv = document.createElement('div');
