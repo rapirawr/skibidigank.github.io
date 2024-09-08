@@ -108,7 +108,11 @@ if (isLoggedIn()) {
                 function elementLoaded() {
                     loadedCount++;
                     if (loadedCount === elements.length) {
-                        updateLoadingText(step);
+                        // Update text loading dan pindah ke elemen berikutnya hanya jika elemen belum pernah di-load
+                        if (!loadedElements.has(element)) {
+                            updateLoadingText(step);
+                            loadedElements.add(element); // Tandai elemen sebagai sudah diproses
+                        }
                         loadNextElement(step + 1); // Pindah ke elemen berikutnya
                     }
                 }
