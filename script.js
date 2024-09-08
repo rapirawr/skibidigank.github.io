@@ -1,9 +1,9 @@
 const photoGallery = document.getElementById('photo-gallery');
+const loadedElements = new Set(); // Menyimpan elemen yang sudah dimuat
 
-// Cek apakah pengguna sudah login
 function isLoggedIn() {
     const storedUsername = localStorage.getItem('username');
-    return storedUsername !== null; // Mengembalikan true jika username ada di localStorage
+    return storedUsername !== null;
 }
 
 if (isLoggedIn()) {
@@ -21,7 +21,6 @@ if (isLoggedIn()) {
         img.src = src;
         img.alt = `Image ${index + 1}`;
         
-        // Event listener untuk gambar yang gagal dimuat
         img.onerror = function() {
             img.style.visibility = 'hidden'; // Menyembunyikan gambar jika gagal dimuat
         };
@@ -29,16 +28,15 @@ if (isLoggedIn()) {
         a.appendChild(img);
         photoGallery.appendChild(a);
     });
+
     window.addEventListener('load', function() {
         const loadingScreen = document.getElementById('loading-screen');
         const allContent = document.querySelectorAll('body > *:not(#loading-screen)');
 
-        // Menyembunyikan semua konten
         allContent.forEach(element => {
             element.classList.add('hidden');
         });
 
-        // Menghilangkan loading screen setelah semua elemen dimuat
         setTimeout(() => {
             loadingScreen.style.opacity = '0';
             setTimeout(() => {
@@ -46,7 +44,7 @@ if (isLoggedIn()) {
                 allContent.forEach(element => {
                     element.classList.remove('hidden');
                 });
-            }, 1000); // Waktu untuk memastikan transisi sebelum menghilangkan loading screen
+            }, 1000);
         }, 0);
     });
 
@@ -55,23 +53,22 @@ if (isLoggedIn()) {
         const loadingWords = document.getElementById('loading-words');
         const elementsToLoad = [
             { name: "Navbar", selector: 'nav' },
-            { name: "Image", selector: 'img' },
+            { name: "Image", selector: '.frame2' },
             { name: "Style", selector: 'link[rel="stylesheet"]' },
-            { name: "Member", selector: '.member-box' },
-            { name: "Social Media", selector: '.social-media' }
+            { name: "Member", selector: '.frame3' },
+            { name: "Social Media", selector: '.frame4' }
         ];
-    
-        // Tambahkan elemen loading ke loading screen
+
         elementsToLoad.forEach(element => {
             const wordSpan = document.createElement('span');
             wordSpan.classList.add('word');
             wordSpan.textContent = element.name;
             loadingWords.appendChild(wordSpan);
         });
-    
+
         const words = document.querySelectorAll('.word');
         let currentStep = 0;
-    
+
         function updateLoadingText(step) {
             words.forEach((word, index) => {
                 if (index === step) {
@@ -81,31 +78,36 @@ if (isLoggedIn()) {
                 }
             });
         }
-    
+
         function loadNextElement(step) {
             if (step < elementsToLoad.length) {
                 const element = elementsToLoad[step];
                 const elements = document.querySelectorAll(element.selector);
-                
+
                 let loadedCount = 0;
-    
+
                 if (elements.length > 0) {
                     elements.forEach(el => {
-                        if (el.complete || el.readyState === 'complete' || el.readyState === 'loaded') {
+                        if (loadedElements.has(el)) {
+                            // Jika elemen sudah dimuat, tidak perlu diproses lagi
                             elementLoaded();
                         } else {
-                            el.addEventListener('load', elementLoaded);
-                            el.addEventListener('error', elementLoaded);
+                            if (el.complete || el.readyState === 'complete' || el.readyState === 'loaded') {
+                                elementLoaded();
+                            } else {
+                                el.addEventListener('load', elementLoaded);
+                                el.addEventListener('error', elementLoaded);
+                            }
+                            loadedElements.add(el); // Tandai elemen sebagai sudah dimuat
                         }
                     });
                 } else {
                     elementLoaded(); // Jika tidak ada elemen yang ditemukan, lanjutkan ke step berikutnya
                 }
-    
+
                 function elementLoaded() {
                     loadedCount++;
                     if (loadedCount === elements.length) {
-                        // Semua elemen dari kategori ini telah diload
                         updateLoadingText(step);
                         loadNextElement(step + 1); // Pindah ke elemen berikutnya
                     }
@@ -114,20 +116,16 @@ if (isLoggedIn()) {
                 finishLoading(); // Semua elemen telah diload
             }
         }
-    
+
         function finishLoading() {
             setTimeout(() => {
-                loadingScreen.classList.add('hidden'); // Sembunyikan loading screen
-            }, 500); // Waktu tunggu sebelum loading screen hilang
+                loadingScreen.classList.add('hidden');
+            }, 500);
         }
-    
-        // Mulai loading dari elemen pertama
+
         loadNextElement(0);
     });
-    
-
 } else {
-    // Jika belum login, tampilkan pesan dengan ikon login
     const messageDiv = document.createElement('div');
     messageDiv.classList.add('gallery-message');
     
@@ -141,16 +139,15 @@ if (isLoggedIn()) {
     icon.className = 'fa-solid fa-right-to-bracket';
     icon.style.color = ' #00fbff';
     
-    // Menambahkan gaya inline untuk memastikan elemen berada di sebelah satu sama lain
     messageDiv.style.display = 'flex';
     messageDiv.style.alignItems = 'center';
     
     textParagraph.style.margin = '0';
-    textParagraph.style.fontSize = '1em'; // Sesuaikan ukuran font jika perlu
+    textParagraph.style.fontSize = '1em';
     
-    link.style.marginLeft = '8px'; // Jarak antara teks dan ikon
+    link.style.marginLeft = '8px';
     
-    icon.style.fontSize = '1.2em'; // Sesuaikan ukuran ikon jika perlu
+    icon.style.fontSize = '1.2em';
     
     link.appendChild(icon);
     messageDiv.appendChild(textParagraph);
