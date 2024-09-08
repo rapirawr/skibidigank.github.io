@@ -6,7 +6,7 @@
     <title>Login - SKIBIDI GANK</title>
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
+    <script src="modallogin.js"></script>
 <body class="login-body">
     <div class="container">
         <div class="login-card box">
@@ -40,13 +40,16 @@
             </form>
         </div>
     </div>
-    <script>
-        function login(event) {
-            event.preventDefault(); // Mencegah form submit secara default
-            const username = document.getElementById('username').value;
-            localStorage.setItem('username', username);
-            window.location.href = 'ror.html'; // Arahkan ke halaman utama
-        }
-    </script>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <div class="modal-text">
+                <p>Username Dilarang</p>
+                <p class="thin-text">Tolong pakai username lain</p>
+                <p id="countdown">Closing in 5 seconds...</p>
+            </div>
+        </div>
+    </div>      
 </body>
 </html>

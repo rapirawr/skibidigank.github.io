@@ -1,127 +1,198 @@
 /* login.css */
 body.login-body {
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
-    position: relative;
-    color: white;
+  position: relative;
+  color: white;
 }
 
 .checkbox-wrapper input[type="checkbox"] {
-    display: none;
-  }
-  
-  .checkbox-wrapper .terms-label {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-  }
-  
-  .checkbox-wrapper .terms-label .label-text {
-    margin-left: 10px;
-    font-size: 12px;
-  }
-  
-  .checkbox-wrapper .checkbox-svg {
-    width: 30px;
-    height: 30px;
-  }
-  
-  .checkbox-wrapper .checkbox-box {
-    fill: rgba(207, 205, 205, 0.425);
-    stroke: aqua;
-    stroke-dasharray: 800;
-    stroke-dashoffset: 800;
-    transition: stroke-dashoffset 0.6s ease-in;
-  }
-  
-  .checkbox-wrapper .checkbox-tick {
-    stroke: aqua;
-    stroke-dasharray: 172;
-    stroke-dashoffset: 172;
-    transition: stroke-dashoffset 0.6s ease-in;
-  }
-  
-  .checkbox-wrapper input[type="checkbox"]:checked + .terms-label .checkbox-box,
-    .checkbox-wrapper input[type="checkbox"]:checked + .terms-label .checkbox-tick {
-    stroke-dashoffset: 0;
-  }
-  
+  display: none;
+}
+
+.checkbox-wrapper .terms-label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-wrapper .terms-label .label-text {
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+.checkbox-wrapper .checkbox-svg {
+  width: 30px;
+  height: 30px;
+}
+
+.checkbox-wrapper .checkbox-box {
+  fill: rgba(207, 205, 205, 0.425);
+  stroke: aqua;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  transition: stroke-dashoffset 0.6s ease-in;
+}
+
+.checkbox-wrapper .checkbox-tick {
+  stroke: aqua;
+  stroke-dasharray: 172;
+  stroke-dashoffset: 172;
+  transition: stroke-dashoffset 0.6s ease-in;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + .terms-label .checkbox-box,
+.checkbox-wrapper input[type="checkbox"]:checked + .terms-label .checkbox-tick {
+  stroke-dashoffset: 0;
+}
+
 .login-card {
-    width: 300px;
-    padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 15px;
-    backdrop-filter: blur(15px);
-    box-shadow: 0 4px 30px aqua;
-    transition: box-shadow 0.3s ease;
-    text-align: center;
+  width: 300px;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 4px 30px aqua;
+  transition: box-shadow 0.3s ease;
+  text-align: center;
 }
 
 .input-group {
-    margin-bottom: 1.5rem;
-    text-align: left;
+  margin-bottom: 1.5rem;
+  text-align: left;
 }
 
 label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 
 input[type="text"],
 input[type="password"] {
-    width: 93%;
-    margin: 0 auto;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    color: white;
-    outline: none;
-    font-size: 16px;
+  width: 93%;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  outline: none;
+  font-size: 16px;
 }
 
 button[type="submit"] {
-    width: 100%;
-    margin: 1rem auto 0 auto;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  width: 100%;
+  margin: 1rem auto 0 auto;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button[type="submit"]:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px aqua;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px aqua;
 }
 
 /* Warna teks untuk h2.title */
 h2.title {
-    color: white; /* Warna teks default */
+  color: white; /* Warna teks default */
 }
 
 h2.title .log {
-    color: rgb(255, 255, 255); /* Warna untuk 'Log' */
+  color: rgb(255, 255, 255); /* Warna untuk 'Log' */
 }
 
 h2.title .in {
-    color: aqua; /* Warna untuk 'in' */
+  color: aqua; /* Warna untuk 'in' */
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #2d2a2a;
+  margin: 0 auto;
+  padding: 10px;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  width: 25%;
+  position: relative;
+  margin-top: 5%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.modal-content i {
+  color: #ffcc008c;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.modal-content p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.modal-content .thin-text {
+  font-weight: normal;
+  color: rgb(107, 114, 128);
+}
+
+.modal-content .countdown {
+  color: rgb(107, 114, 128); /* Warna abu-abu */
+  font-weight: normal; /* Font tipis */
+}
+
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+#countdown {
+  color: rgb(107, 114, 128);
+  font-weight: normal;
+  font-size: 16px; /* Adjust if needed */
 }
