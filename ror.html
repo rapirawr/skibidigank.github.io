@@ -11,21 +11,17 @@
 </head>
 <body onload="displayUsername()">
 
-<!-- Loading Screen -->
-<div id="loading-screen" class="loading-overlay">
+<<div id="loading-screen" class="loading-overlay">
     <div class="card">
         <div class="loader">
-            <p>loading</p>
-            <div class="words">
-                <span class="word">Image</span>
-                <span class="word">Navbar</span>
-                <span class="word">Style</span>
-                <span class="word">Member</span>
-                <span class="word">Social Media</span>
+            <p>Loading</p>
+            <div class="words" id="loading-words">
+                <!-- Words akan dimasukkan secara dinamis oleh JavaScript -->
             </div>
         </div>
     </div>
 </div>
+
 
 <!-- Navbar -->
 <nav class="navbar">
@@ -91,7 +87,7 @@
         <div class="member-item text-animate">
             <div class="member-icon"><i class="fas fa-dove"></i></div>
             <div class="member-info">
-                <h3><a href="DikaBasuri.html">Dika Bajingan</a> <i class="fa fa-user-tie"></i></h3>
+                <h3><a href="DikaBasuri.html">Dika Basuri</a> <i class="fa fa-user-tie"></i></h3>
             </div>
         </div>
     </div>
@@ -108,12 +104,5 @@
 </div>
 
 <script src="script.js"></script>
-<script>
-    window.addEventListener('load', function() {
-        // Hide the loading screen once the page is fully loaded
-        const loadingScreen = document.getElementById('loading-screen');
-        loadingScreen.style.display = 'none';
-    });
-</script>
 </body>
 </html>

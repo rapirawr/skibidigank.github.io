@@ -50,6 +50,81 @@ if (isLoggedIn()) {
         }, 0);
     });
 
+    document.addEventListener("DOMContentLoaded", function() {
+        const loadingScreen = document.getElementById('loading-screen');
+        const loadingWords = document.getElementById('loading-words');
+        const elementsToLoad = [
+            { name: "Image", selector: 'img' },
+            { name: "Navbar", selector: 'nav' },
+            { name: "Style", selector: 'link[rel="stylesheet"]' },
+            { name: "Member", selector: '.member-box' },
+            { name: "Social Media", selector: '.social-media' }
+        ];
+    
+        // Tambahkan elemen loading ke loading screen
+        elementsToLoad.forEach(element => {
+            const wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.textContent = element.name;
+            loadingWords.appendChild(wordSpan);
+        });
+    
+        const words = document.querySelectorAll('.word');
+        let currentStep = 0;
+    
+        function updateLoadingText(step) {
+            words.forEach((word, index) => {
+                if (index === step) {
+                    word.classList.add('highlight');
+                } else {
+                    word.classList.remove('highlight');
+                }
+            });
+        }
+    
+        function loadNextElement(step) {
+            if (step < elementsToLoad.length) {
+                const element = elementsToLoad[step];
+                const elements = document.querySelectorAll(element.selector);
+                
+                let loadedCount = 0;
+    
+                if (elements.length > 0) {
+                    elements.forEach(el => {
+                        if (el.complete || el.readyState === 'complete' || el.readyState === 'loaded') {
+                            elementLoaded();
+                        } else {
+                            el.addEventListener('load', elementLoaded);
+                            el.addEventListener('error', elementLoaded);
+                        }
+                    });
+                } else {
+                    elementLoaded(); // Jika tidak ada elemen yang ditemukan, lanjutkan ke step berikutnya
+                }
+    
+                function elementLoaded() {
+                    loadedCount++;
+                    if (loadedCount === elements.length || elements.length === 0) {
+                        updateLoadingText(step);
+                        loadNextElement(step + 1); // Pindah ke elemen berikutnya
+                    }
+                }
+            } else {
+                finishLoading(); // Semua elemen telah diload
+            }
+        }
+    
+        function finishLoading() {
+            setTimeout(() => {
+                loadingScreen.classList.add('hidden'); // Sembunyikan loading screen
+            }, 500); // Waktu tunggu sebelum loading screen hilang
+        }
+    
+        // Mulai loading dari elemen pertama
+        loadNextElement(0);
+    });
+    
+
 } else {
     // Jika belum login, tampilkan pesan dengan ikon login
     const messageDiv = document.createElement('div');
