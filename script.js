@@ -54,8 +54,8 @@ if (isLoggedIn()) {
         const loadingScreen = document.getElementById('loading-screen');
         const loadingWords = document.getElementById('loading-words');
         const elementsToLoad = [
-            { name: "Image", selector: 'img' },
             { name: "Navbar", selector: 'nav' },
+            { name: "Image", selector: 'img' },
             { name: "Style", selector: 'link[rel="stylesheet"]' },
             { name: "Member", selector: '.member-box' },
             { name: "Social Media", selector: '.social-media' }
@@ -104,7 +104,8 @@ if (isLoggedIn()) {
     
                 function elementLoaded() {
                     loadedCount++;
-                    if (loadedCount === elements.length || elements.length === 0) {
+                    if (loadedCount === elements.length) {
+                        // Semua elemen dari kategori ini telah diload
                         updateLoadingText(step);
                         loadNextElement(step + 1); // Pindah ke elemen berikutnya
                     }
