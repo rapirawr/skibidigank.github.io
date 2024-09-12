@@ -70,7 +70,7 @@ function login(event) {
   const username = document.getElementById('username').value;
   if (isUsernameValid(username)) {
     localStorage.setItem('username', username);
-    window.location.href = 'ror.html';
+    window.location.href = 'index.html';
   } else {
     showModal();
   }
