@@ -6,7 +6,8 @@
     <title>Login - SKIBIDI GANK</title>
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="modallogin.js"></script>
+    <script src="storage.js" defer></script>
+</head>
 <body class="login-body">
     <div class="container">
         <div class="login-card box">
@@ -20,21 +21,31 @@
                     <input type="text" id="username" name="username" required>
                 </div>
                 <div class="input-group">
-                    <label for="password"><strong>Password</strong></label>
-                    <input type="password" id="password" name="password" required>
+                    <label><strong>Gender</strong></label>
+                    <div class="gender-group">
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="male" class="gender-option">
+                            <i class="fa-solid fa-mars"></i> Male
+                        </label>
+                
+                        <input type="radio" id="female" name="gender" value="female" required>
+                        <label for="female" class="gender-option">
+                            <i class="fa-solid fa-venus"></i> Female
+                        </label>
+                    </div>
                 </div>
                 <div class="checkbox-wrapper">
-                  <input id="terms-checkbox-37" name="checkbox" type="checkbox" required>
-                  <label class="terms-label" for="terms-checkbox-37">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 200 200" class="checkbox-svg">
-                      <mask fill="white" id="path-1-inside-1_476_5-37">
-                        <rect height="200" width="200"></rect>
-                      </mask>
-                      <rect mask="url(#path-1-inside-1_476_5-37)" stroke-width="40" class="checkbox-box" height="200" width="200"></rect>
-                      <path stroke-width="15" d="M52 111.018L76.9867 136L149 64" class="checkbox-tick"></path>
-                    </svg>
-                    <span class="label-text">Aku menyetujui peraturan UUS</span>
-                  </label>
+                    <input id="terms-checkbox-37" name="checkbox" type="checkbox" required>
+                    <label class="terms-label" for="terms-checkbox-37">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 200 200" class="checkbox-svg">
+                            <mask fill="white" id="path-1-inside-1_476_5-37">
+                                <rect height="200" width="200"></rect>
+                            </mask>
+                            <rect mask="url(#path-1-inside-1_476_5-37)" stroke-width="40" class="checkbox-box" height="200" width="200"></rect>
+                            <path stroke-width="15" d="M52 111.018L76.9867 136L149 64" class="checkbox-tick"></path>
+                        </svg>
+                        <span class="label-text">Aku menyetujui peraturan UUS</span>
+                    </label>
                 </div>
                 <button type="submit">Login</button>
             </form>
