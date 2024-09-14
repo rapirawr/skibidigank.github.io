@@ -1,12 +1,11 @@
 const photoGallery = document.getElementById('photo-gallery');
-const loadedElements = new Set(); // Menyimpan elemen yang sudah dimuat
+const loadedElements = new Set(); 
 
 function isLoggedIn() {
     const storedUsername = localStorage.getItem('username');
     return storedUsername !== null;
 }
 
-// Mengisi galeri foto dan menampilkan pesan jika belum login
 function populateGallery() {
     if (isLoggedIn()) {
         const images = [];
@@ -24,7 +23,7 @@ function populateGallery() {
             img.alt = `Image ${index + 1}`;
             
             img.onerror = function() {
-                img.style.visibility = 'hidden'; // Menyembunyikan gambar jika gagal dimuat
+                img.style.visibility = 'hidden'; 
             };
             
             a.appendChild(img);
@@ -61,7 +60,6 @@ function populateGallery() {
     }
 }
 
-// Proses loading elemen
 window.addEventListener('load', function() {
     const loadingScreen = document.getElementById('loading-screen');
     const allContent = document.querySelectorAll('body > *:not(#loading-screen)');
@@ -77,8 +75,8 @@ window.addEventListener('load', function() {
             allContent.forEach(element => {
                 element.classList.remove('hidden');
             });
-        }, 1000); // Durasi transisi untuk menghilangkan loading screen
-    }, 0); // Segera setelah halaman dimuat
+        }, 1000); 
+    }, 0); 
 });
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -134,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 });
             } else {
-                elementLoaded(); // Jika tidak ada elemen yang ditemukan, lanjutkan ke step berikutnya
+                elementLoaded(); 
             }
 
             function elementLoaded() {
@@ -159,17 +157,16 @@ document.addEventListener("DOMContentLoaded", function() {
             document.querySelectorAll('body > *:not(#loading-screen)').forEach(element => {
                 element.classList.remove('hidden');
             });
-        }, 1000); // Durasi transisi untuk menghilangkan loading screen
+        }, 1000); 
     }
 
-    loadNextElement(0); // Mulai proses loading
+    loadNextElement(0);  
 });
 
-// Memanggil fungsi populateGallery untuk mengisi galeri foto
+ 
 populateGallery();
 
-// Animasi teks
-document.addEventListener('DOMContentLoaded', function() {
+ document.addEventListener('DOMContentLoaded', function() {
     const elements = document.querySelectorAll('.text-animate');
 
     const observer = new IntersectionObserver((entries) => {
@@ -187,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-//Button Skibidi Gank di navbar
+ 
 document.addEventListener('DOMContentLoaded', function() {
     const redirectButton = document.getElementById('redirect-button');
     
